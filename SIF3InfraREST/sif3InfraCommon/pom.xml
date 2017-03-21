@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>sif3.framework</groupId>
 		<artifactId>sif3-framework</artifactId>
-		<version>0.10.0-beta</version>
+		<version>0.11.0-beta</version>
 	</parent>
 	
 	<!-- =========== -->
@@ -28,33 +28,6 @@
 	</properties>
 
 	<dependencies>
-
-		<!-- ====================== -->
-		<!-- Local Dependencies     -->
-		<!-- Part of parent Project -->
-		<!-- ====================== -->
-		<dependency>
-			<groupId>sifau</groupId>
-			<artifactId>sif3-au-datamodel</artifactId>
-		</dependency>
-
-		<!-- ====================== -->
-		<!-- JDBC Dependencies      -->
-		<!-- Testing classes only   -->
-		<!-- ====================== -->
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>mysql-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>oracle-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>sqlite-jdbc</artifactId>
-		</dependency>
-		
 		<!-- ================================= -->
 		<!-- Other SIF3 Framework Dependencies -->
 		<!-- ================================= -->
@@ -71,11 +44,11 @@
 		</dependency>
 
 		<!-- ================== -->
-		<!-- Log4J Dependencies -->
+		<!-- slf4j Dependencies -->
 		<!-- ================== -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
 		</dependency>
 
 	</dependencies>

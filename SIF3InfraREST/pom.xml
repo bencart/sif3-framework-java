@@ -17,7 +17,7 @@
 	<!-- =========== -->
 	<groupId>sif3.framework</groupId>
 	<artifactId>sif3-framework</artifactId>
-	<version>0.10.0-beta</version>
+	<version>0.11.0-beta</version>
 	<packaging>pom</packaging>
 	
 	<!-- ===================================== -->
@@ -30,15 +30,8 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
-		<!-- Hardcoded Variable for the non-maven library location -->
-		<!--project.lib.dir>C:/DEV/workspaces/jbds10.1.0/sif3-framework/lib</project.lib.dir-->
-		<project.lib.dir>C:/Development/GitHubRepositories/SIF3InfraRest/SIF3InfraREST/lib</project.lib.dir>
-		
-		<!-- The location of the SIF AU Data Model library -->
-		<auDMLibLocation>${project.lib.dir}/datamodel</auDMLibLocation>
-
 		<!-- The current SIF 3.x infrastructure version for which the library intended for. -->
-		<sifInfraVersion>3.1</sifInfraVersion>
+		<sifInfraVersion>3.2.1</sifInfraVersion>
 		
 		<!-- Final Jar name of all sub-modules follows a certain naming convention that includes the SIF infrastructure version. -->
 		<jarName.prefix>sif${sifInfraVersion}</jarName.prefix>
@@ -61,7 +54,7 @@
 			<dependency>
 				<groupId>sifau</groupId>
 				<artifactId>sif3-au-datamodel</artifactId>
-				<version>3.4</version>
+				<version>3.4.1</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -88,12 +81,12 @@
 			</dependency>
 
 			<!-- ================== -->
-			<!-- Log4j Dependencies -->
+			<!-- slf4j Dependencies -->
 			<!-- ================== -->
 			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>1.2.14</version>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>slf4j-api</artifactId>
+			    <version>1.7.22</version>
 			</dependency>
 
 			<!-- ======================== -->
@@ -120,26 +113,6 @@
 	</dependencyManagement>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-			    <!-- =============================================================== -->
-			    <!--  Test Plugin configuration. Required to turn on/off test cases. -->
-			    <!-- =============================================================== -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.19.1</version>
-					<configuration>
-						<skipTests>${skipTests}</skipTests>
-					</configuration>
-				</plugin>
-
-			    <!-- ====================================================================================================== -->
-			    <!-- Install non-maven libraries into the local repository. This enables these libraries to be treated like -->
-			    <!-- standard maven libraries for the rest of the project builds.                                           -->
-			    <!-- ====================================================================================================== -->
-			</plugins>
-		</pluginManagement>
 	</build>
 	
 	<modules>
