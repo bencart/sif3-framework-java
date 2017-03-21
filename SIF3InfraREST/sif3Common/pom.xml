@@ -27,30 +27,6 @@
 	</properties>
 	
 	<dependencies>
-	
-		<!-- ====================== -->
-		<!-- Local Dependencies     -->
-		<!-- Part of parent Project -->
-		<!-- ====================== -->
-
-		
-		<!-- ====================== -->
-		<!-- JDBC Dependencies      -->
-		<!-- Testing classes only   -->
-		<!-- ====================== -->
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>mysql-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>oracle-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>sqlite-jdbc</artifactId>
-		</dependency>
-		
 		<!-- ================== -->
 		<!-- slf4j Dependencies -->
 		<!-- ================== -->
@@ -58,12 +34,7 @@
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		</dependency>
-		
-		<dependency>
-    		<groupId>org.slf4j</groupId>
-    		<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-		
+			
 		<!-- =========================== -->
 		<!-- Apache Commons Dependencies -->
 		<!-- =========================== -->
@@ -101,20 +72,6 @@
 			<artifactId>jersey-json</artifactId>
 			<version>1.19</version>
 		</dependency>
-
-<!-- 
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.19</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.19</version>
-		</dependency>
- -->
  
 		<!-- ====================== -->
 		<!-- Hibernate Dependencies -->
@@ -151,18 +108,6 @@
 			<artifactId>jdom</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-		<!-- ================== -->
-		<!-- Junit Dependencies -->
-		<!-- ================== -->
-<!-- 		
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
- -->
  	</dependencies>
  
 	<build>
@@ -184,35 +129,6 @@
 				</excludes>
 			</resource>
 		</resources>
-		<plugins>
-		    <!-- =============================================================== -->
-		    <!--  Test Plugin configuration. Required to turn on/off test cases. -->
-		    <!-- =============================================================== -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-			
-		    <!-- ============================================================================================= -->
-		    <!--  Do not install non-maven libs into the local repository as it is already done by the parent. -->
-		    <!-- ============================================================================================= -->
-<!--	    
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>>maven-install-plugin</artifactId>
-				<executions>
-					<execution>
-	    				<id>install-external-systemic</id>
-	    				<phase/>
-					</execution>
-					<execution>
-	    				<id>install-external-au-datamodel</id>
-	    				<phase/>
-					</execution>
-				</executions>	
-			</plugin>
--->
-		</plugins>
 	</build>
 
 	<description>This project hold common code, interfaces etc. for the SIF3 Framework. It is not tied to any infrastructure implementation and therefore classes in this project can be used elsewhere (i.e. Data Model generator for the Local Data Model).</description>

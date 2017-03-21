@@ -30,13 +30,6 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
-		<!-- Hardcoded Variable for the non-maven library location -->
-		<!--project.lib.dir>C:/DEV/workspaces/jbds10.1.0/sif3-framework/lib</project.lib.dir-->
-		<project.lib.dir>C:/Development/GitHubRepositories/SIF3InfraRest/SIF3InfraREST/lib</project.lib.dir>
-		
-		<!-- The location of the SIF AU Data Model library -->
-		<auDMLibLocation>${project.lib.dir}/datamodel</auDMLibLocation>
-
 		<!-- The current SIF 3.x infrastructure version for which the library intended for. -->
 		<sifInfraVersion>3.2.1</sifInfraVersion>
 		
@@ -96,14 +89,6 @@
 			    <version>1.7.22</version>
 			</dependency>
 
-			<!-- Use log4j as the slf4j binder for tests: A specific slf4j binder will be provided in the runtime and may differ from this one. -->
-			<dependency>
-	    		<groupId>org.slf4j</groupId>
-	    		<artifactId>slf4j-log4j12</artifactId>
-	    		<version>1.7.22</version>
-	    		<scope>test</scope>
-			</dependency>
-
 			<!-- ======================== -->
 			<!-- Servlet API Dependencies -->
 			<!-- ======================== -->
@@ -128,108 +113,6 @@
 	</dependencyManagement>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-			    <!-- =============================================================== -->
-			    <!--  Test Plugin configuration. Required to turn on/off test cases. -->
-			    <!-- =============================================================== -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.19.1</version>
-					<configuration>
-						<skipTests>${skipTests}</skipTests>
-					</configuration>
-				</plugin>
-
-			    <!-- ====================================================================================================== -->
-			    <!-- Install non-maven libraries into the local repository. This enables these libraries to be treated like -->
-			    <!-- standard maven libraries for the rest of the project builds.                                           -->
-			    <!-- ====================================================================================================== -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>2.5.2</version>
-					<executions>
-						<execution>
-							<id>install-external-au-datamodel</id>
-							<phase>clean</phase>
-							<configuration>
-								<file>${project.lib.dir}/datamodel/sifDataModel_au3.4.1.jar</file>
-								<repositoryLayout>default</repositoryLayout>
-								<groupId>sifau</groupId>
-								<artifactId>sif3-au-datamodel</artifactId>
-								<version>3.4.1</version>
-								<packaging>jar</packaging>
-								<generatePom>true</generatePom>
-							</configuration>
-							<goals>
-								<goal>install-file</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>install-external-mysql-jdbc</id>
-							<phase>clean</phase>
-							<configuration>
-								<file>${project.lib.dir}/jdbc/mysql.jar</file>
-								<repositoryLayout>default</repositoryLayout>
-								<groupId>jdbc</groupId>
-								<artifactId>mysql-jdbc</artifactId>
-								<version>4.0</version>
-								<packaging>jar</packaging>
-								<generatePom>true</generatePom>
-							</configuration>
-							<goals>
-								<goal>install-file</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>install-external-oracle-jdbc</id>
-							<phase>clean</phase>
-							<configuration>
-								<file>${project.lib.dir}/jdbc/ojdbc6.jar</file>
-								<repositoryLayout>default</repositoryLayout>
-								<groupId>jdbc</groupId>
-								<artifactId>oracle-jdbc</artifactId>
-								<version>6.0</version>
-								<packaging>jar</packaging>
-								<generatePom>true</generatePom>
-							</configuration>
-							<goals>
-								<goal>install-file</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>install-external-sqlite-jdbc</id>
-							<phase>clean</phase>
-							<configuration>
-								<file>${project.lib.dir}/jdbc/sqlite-jdbc-3.7.2.jar</file>
-								<repositoryLayout>default</repositoryLayout>
-								<groupId>jdbc</groupId>
-								<artifactId>sqlite-jdbc</artifactId>
-								<version>3.7.2</version>
-								<packaging>jar</packaging>
-								<generatePom>true</generatePom>
-							</configuration>
-							<goals>
-								<goal>install-file</goal>
-							</goals>
-						</execution>
-					</executions>			
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		
-		<plugins>
-		    <!-- ====================================================================================================== -->
-		    <!-- Install non-maven libraries into the local repository. This enables these libraries to be treated like -->
-		    <!-- standard maven libraries for the rest of the project builds.                                           -->
-		    <!-- ====================================================================================================== -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-			</plugin>
-		</plugins>
 	</build>
 	
 	<modules>

@@ -28,33 +28,6 @@
 	</properties>
 
 	<dependencies>
-
-		<!-- ====================== -->
-		<!-- Local Dependencies     -->
-		<!-- Part of parent Project -->
-		<!-- ====================== -->
-		<dependency>
-			<groupId>sifau</groupId>
-			<artifactId>sif3-au-datamodel</artifactId>
-		</dependency>
-
-		<!-- ====================== -->
-		<!-- JDBC Dependencies      -->
-		<!-- Testing classes only   -->
-		<!-- ====================== -->
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>mysql-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>oracle-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jdbc</groupId>
-			<artifactId>sqlite-jdbc</artifactId>
-		</dependency>
-		
 		<!-- ================================= -->
 		<!-- Other SIF3 Framework Dependencies -->
 		<!-- ================================= -->
@@ -78,10 +51,6 @@
 		    <artifactId>slf4j-api</artifactId>
 		</dependency>
 
-		<dependency>
-    		<groupId>org.slf4j</groupId>
-    		<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
 	</dependencies>
  
 	<build>
