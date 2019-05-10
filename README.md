@@ -1,5 +1,9 @@
-See the [wiki associated with this repository](https://github.com/Access4Learning/sif3-framework-java/wiki) for information on: 
+This has links to the version in sif3-framework-java.
 
-* contributing to this framework 
-* the Java coding style to be used and
-* the structure of the SIF 3 Framework repositories
+Update that one then build this one.
+
+This has different poms.
+
+mvn versions:set -DnewVersion=0.12.0
+
+mvn clean compile source:jar deploy

@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>sif3.framework</groupId>
 		<artifactId>sif3-framework</artifactId>
-		<version>0.11.0-beta</version>
+		<version>0.14.0</version>
 	</parent>
 	
 	<!-- =========== -->
@@ -43,6 +43,11 @@
 			<artifactId>sif3-infra-common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz</artifactId>
+</dependency>
 
 		<dependency>
 		    <groupId>javax.servlet</groupId>

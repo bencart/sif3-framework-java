@@ -17,7 +17,7 @@
 	<!-- =========== -->
 	<groupId>sif3.framework</groupId>
 	<artifactId>sif3-framework</artifactId>
-	<version>0.11.0-beta</version>
+	<version>0.14.0</version>
 	<packaging>pom</packaging>
 	
 	<!-- ===================================== -->
@@ -37,7 +37,7 @@
 		<jarName.prefix>sif${sifInfraVersion}</jarName.prefix>
 
 		<!-- Because the tests are not JUnit tests and are run manually we disable them by default. This may change in future. -->
-		<skipTests>true</skipTests>
+		<maven.test.skip>true</maven.test.skip>
 	</properties>
 	
 	<!-- ====================== -->
@@ -79,6 +79,12 @@
 				<version>3.7.2</version>
 				<scope>test</scope>
 			</dependency>
+			
+			<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz</artifactId>
+    <version>2.3.0</version>
+</dependency>
 
 			<!-- ================== -->
 			<!-- slf4j Dependencies -->
@@ -111,14 +117,26 @@
 		
 		</dependencies>
 	</dependencyManagement>
+	    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>adsbsv.ads.det.wa.edu.au-releases</name>
+            <url>https://adsdev.ads.det.wa.edu.au/artifactory/ext-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>adsbsv.ads.det.wa.edu.au-snapshots</name>
+            <url>https://adsdev.ads.det.wa.edu.au/artifactory/ext-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 	<build>
 	</build>
 	
 	<modules>
-		<module>SIF3Common</module>
-		<module>SIF3InfraModel</module>
-		<module>SIF3InfraCommon</module>
+		<module>sif3Common</module>
+		<module>sif3InfraModel</module>
+		<module>sif3InfraCommon</module>
 		<module>SIF3REST</module>
 	</modules>
 	<name>SIF3 Framework Parent Project</name>
